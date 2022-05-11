@@ -12,7 +12,7 @@ const computerPlay = function () {
 // console.log(computerPlay());
 const computerSelection = computerPlay();
 const playerSelection = "rock";
-let humanPlayerWon = `Player One wins!!!`;
+let humanPlayerWon = `Player One wins this round!!!`;
 let computerWon = "Computer won this round!!";
 
 const playRound = function (playerSelection, computerSelection) {
@@ -40,17 +40,19 @@ const playRound = function (playerSelection, computerSelection) {
 
 // console.log(playRound(playerSelection, computerSelection));
 
-const game = function (playerSelection, computerSelection) {
+let game = (playerSelection, computerSelection) => {
   let player = 0;
   let computer = 0;
   for (let i = 0; i < 5; i++) {
     playRound(playerSelection, computerSelection);
-  }
-  if (humanPlayerWon) {
-    player += 1;
-  } else if (computerWon) {
-    computer = +1;
+    if (humanPlayerWon) {
+      player += 1;
+      return `${humanPlayerWon} and the score is ${player}`;
+    } else if (computerWon) {
+      computer += 1;
+      return `${computerWon} and the score is ${computer}`;
+    }
   }
 };
 
-console.log(game());
+console.log(game(playerSelection, computerSelection));
