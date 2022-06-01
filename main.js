@@ -1,10 +1,10 @@
 const computerPlay = function () {
-  const value = Math.random() * 10;
-  if (value < 3) {
+  const value = Math.ceil(Math.random() * 3);
+  if (value = 3) {
     return "rock";
-  } else if (3 < value) {
+  } else if (2 = value) {
     return "paper";
-  } else if (value > 6) {
+  } else if (value = 1) {
     return "scissors";
   }
 };
@@ -40,7 +40,7 @@ const playRound = function (playerSelection, computerSelection) {
 
 // console.log(playRound(playerSelection, computerSelection));
 
-let game = (playerSelection, computerSelection) => {
+let game = () => {
   let player = 0;
   let computer = 0;
   for (let i = 0; i < 5; i++) {
@@ -54,5 +54,3 @@ let game = (playerSelection, computerSelection) => {
     }
   }
 };
-
-console.log(game(playerSelection, computerSelection));
