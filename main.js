@@ -1,10 +1,10 @@
 const computerPlay = function () {
   const value = Math.ceil(Math.random() * 3);
-  if (value = 3) {
+  if (value === 3) {
     return "rock";
-  } else if (2 = value) {
+  } else if (value === 2) {
     return "paper";
-  } else if (value = 1) {
+  } else if (value === 1) {
     return "scissors";
   }
 };
@@ -38,13 +38,13 @@ const playRound = function (playerSelection, computerSelection) {
   }
 };
 
-// console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));
 
 let game = () => {
   let player = 0;
   let computer = 0;
   for (let i = 0; i < 5; i++) {
-    playRound(playerSelection, computerSelection);
+    playRound();
     if (humanPlayerWon) {
       player += 1;
       return `${humanPlayerWon} and the score is ${player}`;
@@ -54,3 +54,5 @@ let game = () => {
     }
   }
 };
+
+console.log(game());
