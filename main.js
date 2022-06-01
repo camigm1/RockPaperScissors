@@ -16,8 +16,8 @@ const computerPlay = function () {
 // console.log(computerPlay());
 const computerSelection = computerPlay();
 const playerSelection = "rock";
-let humanPlayerWon = `Player One wins this round!!!`;
-let computerWon = "Computer won this round!!";
+let humanPlayerWon = `Player One wins this round!`;
+let computerWon = "Computer won this round!";
 
 const playRound = function (playerSelection, computerSelection) {
   let playerOne = playerSelection;
