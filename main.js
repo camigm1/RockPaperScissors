@@ -1,3 +1,7 @@
+const rock = document.querySelector(".rock").value;
+const paper = document.querySelector(".paper").value;
+const scissors = document.querySelector(".scissors").value;
+
 const computerPlay = function () {
   const value = Math.ceil(Math.random() * 3);
   if (value === 3) {
