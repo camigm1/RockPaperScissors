@@ -21,19 +21,21 @@ let computerWon = "Computer won this round!";
 
 const playRound = function (playerSelection, computerSelection) {
   let playerOne = playerSelection;
+  let playerOnePoints = 0;
+  let computerSelectionPoints = 0;
   if (
     (playerOne === "rock" && computerSelection === "scissors") ||
     (playerOne === "scissors" && computerSelection === "paper") ||
     (playerOne === "paper" && computerSelection === "rock")
   ) {
-    let humanPlayerWon = `Player One wins!!!`;
+    let humanPlayerWon = `Player One wins!!`;
     return humanPlayerWon;
   } else if (
     (playerSelection === "scissors" && computerSelection === "rock") ||
     (playerSelection === "paper" && computerSelection === "scissors") ||
     (playerSelection === "rock" && computerSelection === "paper")
   ) {
-    let computerWon = "Computer won this round!!";
+    let computerWon = `Computer won`;
     return computerWon;
   } else if (playerSelection === computerSelection) {
     return "Its a draw!!";
@@ -42,19 +44,19 @@ const playRound = function (playerSelection, computerSelection) {
   }
 };
 
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
 
 let game = () => {
-  let player = 0;
-  let computer = 0;
+  let playerOnePoints = 0;
+  let computerSelectionPoints = 0;
+  playRound(playerSelection, computerSelection);
   for (let i = 0; i < 5; i++) {
-    playRound();
-    if (humanPlayerWon) {
-      player += 1;
-      return `${humanPlayerWon} and the score is ${player}`;
-    } else if (computerWon) {
-      computer += 1;
-      return `${computerWon} and the score is ${computer}`;
+    if (computerWon) {
+      return `${computerSelectionPoints + 1}`;
+    } else if (humanPlayerWon) {
+      return `${playerOnePoints + 1}`;
+    } else {
+      return "Its a draw";
     }
   }
 };
