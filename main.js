@@ -22,14 +22,12 @@ let humanPlayerWon = `Player One wins this round!`;
 let computerWon = "Computer won this round!";
 
 const playRound = function (computerSelection) {
-  let playerOnePoints = 0;
-  let computerSelectionPoints = 0;
   const playerSelection = prompt("Pick rock,paper, or scissors?").toLowerCase();
-  let playerOne = playerSelection;
+
   if (
-    (playerOne === "rock" && computerSelection === "scissors") ||
-    (playerOne === "scissors" && computerSelection === "paper") ||
-    (playerOne === "paper" && computerSelection === "rock")
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "rock")
   ) {
     return humanPlayerWon;
   } else if (
@@ -54,6 +52,18 @@ let game = () => {
     let computerSelection = computerPlay();
     const result = playRound(computerSelection);
     console.log(result);
+    if (result === humanPlayerWon) {
+      console.log((playerOnePoints += 1));
+    } else if (result === computerWon) {
+      console.log((computerSelectionPoints += 1));
+    }
+  }
+  if (playerOnePoints > computerSelectionPoints) {
+    console.log("Player is Ultimate winner!!");
+  } else if (computerSelectionPoints > playerOnePoints) {
+    console.log("Computer is ultimate winner");
+  } else {
+    console.log("nobody is the winner");
   }
 };
 
