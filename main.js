@@ -6,23 +6,20 @@ let valueRock = "";
 let valuePaper = "";
 let valueScissors = "";
 
-// rock.addEventListener("click", function () {
-//   valueRock = rock.innerHTML.toLowerCase();
-//   playRound(valueRock, computerPlay);
-//   console.log(playRound());
-// });
+rock.addEventListener("click", function () {
+  valueRock = rock.innerHTML.toLowerCase();
+  console.log(playRound(valueRock, computerPlay()));
+});
 
-// paper.addEventListener("click", function () {
-//   valuePaper = paper.innerHTML.toLowerCase();
-//   playRound(valuePaper, computerPlay);
-//   console.log(playRound());
-// });
+paper.addEventListener("click", function () {
+  valuePaper = paper.innerHTML.toLowerCase();
+  console.log(playRound(valuePaper, computerPlay()));
+});
 
-// scissors.addEventListener("click", function () {
-//   valueScissors = scissors.innerHTML.toLowerCase();
-// playRound(valueScissors, computerPlay);
-// console.log(playRound());
-// });
+scissors.addEventListener("click", function () {
+  valueScissors = scissors.innerHTML.toLowerCase();
+  console.log(playRound(valueScissors, computerPlay()));
+});
 
 const computerPlay = function () {
   const value = Math.ceil(Math.random() * 3);
@@ -39,8 +36,6 @@ let humanPlayerWon = `Player One wins this round!`;
 let computerWon = "Computer won this round!";
 
 const playRound = function (playerSelection, computerSelection) {
-  // const playerSelection = prompt("Pick rock,paper, or scissors?").toLowerCase();
-
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "scissors" && computerSelection === "paper") ||
@@ -59,26 +54,6 @@ const playRound = function (playerSelection, computerSelection) {
     return "Please enter a value";
   }
 };
-
-console.log(playRound(valueScissors, computerPlay));
-rock.addEventListener("click", function () {
-  valueRock = rock.innerHTML.toLowerCase();
-  playRound(valueRock, computerPlay);
-  console.log(playRound());
-});
-
-paper.addEventListener("click", function () {
-  valuePaper = paper.innerHTML.toLowerCase();
-  playRound(valuePaper, computerPlay);
-  console.log(playRound());
-});
-
-scissors.addEventListener("click", function () {
-  valueScissors = scissors.innerHTML.toLowerCase();
-  playRound(valueScissors, computerPlay);
-  console.log(playRound());
-});
-// console.log(playRound(computerSelection));
 
 // let game = () => {
 //   let playerOnePoints = 0;
