@@ -1,10 +1,27 @@
-// const rock = document.querySelector(".rock");
-// const paper = document.querySelector(".paper").value;
-// const scissors = document.querySelector(".scissors").value;
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
-// rock.addEvenlistener("click", function (e) {
-//   const valueRock = e.target.value;
-//   console.log(valueRock);
+let valueRock = "";
+let valuePaper = "";
+let valueScissors = "";
+
+// rock.addEventListener("click", function () {
+//   valueRock = rock.innerHTML.toLowerCase();
+//   playRound(valueRock, computerPlay);
+//   console.log(playRound());
+// });
+
+// paper.addEventListener("click", function () {
+//   valuePaper = paper.innerHTML.toLowerCase();
+//   playRound(valuePaper, computerPlay);
+//   console.log(playRound());
+// });
+
+// scissors.addEventListener("click", function () {
+//   valueScissors = scissors.innerHTML.toLowerCase();
+// playRound(valueScissors, computerPlay);
+// console.log(playRound());
 // });
 
 const computerPlay = function () {
@@ -21,8 +38,8 @@ const computerPlay = function () {
 let humanPlayerWon = `Player One wins this round!`;
 let computerWon = "Computer won this round!";
 
-const playRound = function (computerSelection) {
-  const playerSelection = prompt("Pick rock,paper, or scissors?").toLowerCase();
+const playRound = function (playerSelection, computerSelection) {
+  // const playerSelection = prompt("Pick rock,paper, or scissors?").toLowerCase();
 
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -43,28 +60,46 @@ const playRound = function (computerSelection) {
   }
 };
 
+console.log(playRound(valueScissors, computerPlay));
+rock.addEventListener("click", function () {
+  valueRock = rock.innerHTML.toLowerCase();
+  playRound(valueRock, computerPlay);
+  console.log(playRound());
+});
+
+paper.addEventListener("click", function () {
+  valuePaper = paper.innerHTML.toLowerCase();
+  playRound(valuePaper, computerPlay);
+  console.log(playRound());
+});
+
+scissors.addEventListener("click", function () {
+  valueScissors = scissors.innerHTML.toLowerCase();
+  playRound(valueScissors, computerPlay);
+  console.log(playRound());
+});
 // console.log(playRound(computerSelection));
 
-let game = () => {
-  let playerOnePoints = 0;
-  let computerSelectionPoints = 0;
-  for (let i = 0; i < 5; i++) {
-    let computerSelection = computerPlay();
-    const result = playRound(computerSelection);
-    console.log(result);
-    if (result === humanPlayerWon) {
-      console.log((playerOnePoints += 1));
-    } else if (result === computerWon) {
-      console.log((computerSelectionPoints += 1));
-    }
-  }
-  if (playerOnePoints > computerSelectionPoints) {
-    console.log("Player is Ultimate winner!!");
-  } else if (computerSelectionPoints > playerOnePoints) {
-    console.log("Computer is ultimate winner");
-  } else {
-    console.log("nobody is the winner");
-  }
-};
+// let game = () => {
+//   let playerOnePoints = 0;
+//   let computerSelectionPoints = 0;
+//   for (let i = 0; i < 5; i++) {
+//     let computerSelection = computerPlay();
+//     const result = playRound(computerSelection);
+//     console.log(result);
+//     if (result === humanPlayerWon) {
+//       console.log((playerOnePoints += 1));
+//     } else if (result === computerWon) {
+//       console.log((computerSelectionPoints += 1));
+//     }
+//   }
+//   if (playerOnePoints > computerSelectionPoints) {
+//     console.log("Player is Ultimate winner!!");
+//   } else if (computerSelectionPoints > playerOnePoints) {
+//     console.log("Computer is ultimate winner");
+//   } else {
+//     console.log("nobody is the winner");
+//   }
+// };
 
-game();
+// game();
