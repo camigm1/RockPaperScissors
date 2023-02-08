@@ -4,6 +4,7 @@ const scissors = document.querySelector(".scissors");
 const results = document.querySelector(".result");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
+const computerChoice = document.querySelector(".computerChoice");
 
 let valueRock = "";
 let valuePaper = "";
@@ -21,6 +22,7 @@ paper.addEventListener("click", function () {
 
 scissors.addEventListener("click", function () {
   valueScissors = scissors.innerHTML.toLowerCase();
+
   playRound(valueScissors, computerPlay());
 });
 
@@ -35,6 +37,8 @@ const computerPlay = function () {
   }
 };
 // console.log(computerPlay());
+let playerMessage = "Player Wins";
+let computerMessage = "Computer Wins";
 let humanPlayerWon = `Player One wins this round!`;
 let computerWon = "Computer won this round!";
 let playerOnePoints = 0;
@@ -45,18 +49,33 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper") ||
     (playerSelection === "paper" && computerSelection === "rock")
   ) {
-    results.textContent = humanPlayerWon;
+    results.textContent = playerMessage;
     playerScore.textContent = playerOnePoints += 1;
+    // computerChoice.textContent = computerSelection;
+    if (playerOnePoints === 5) {
+      gameOver(humanPlayerWon);
+    }
   } else if (
     (playerSelection === "scissors" && computerSelection === "rock") ||
     (playerSelection === "paper" && computerSelection === "scissors") ||
     (playerSelection === "rock" && computerSelection === "paper")
   ) {
-    results.textContent = computerWon;
+    results.textContent = computerMessage;
     computerScore.textContent = computerSelectionPoints += 1;
+    if (computerSelectionPoints === 5) {
+      gameOver(computerWon);
+    }
   } else {
     results.textContent = "Its a Draw";
   }
+};
+
+const gameOver = (message) => {
+  results.textContent = message;
+  computerSelectionPoints = 0;
+  playerOnePoints = 0;
+  playerScore.textContent = 0;
+  computerScore.textContent = 0;
 };
 
 // let game = (value) => {
