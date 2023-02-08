@@ -66,7 +66,7 @@ const playRound = function (playerSelection, computerSelection) {
       gameOver(computerWon);
     }
   } else {
-    results.textContent = "Its a Draw";
+    results.textContent = "Draw";
   }
 };
 
