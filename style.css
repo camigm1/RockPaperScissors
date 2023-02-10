@@ -19,7 +19,7 @@ p {
 }
 
 header {
-  width: 50%;
+  width: 95%;
   margin: 0 auto;
   text-align: center;
   background-color: #6f7bf7;
@@ -28,12 +28,13 @@ header {
 }
 
 main {
-  width: 50%;
+  width: 95%;
   margin: 0 auto;
   text-align: center;
-  background-image: url(/background-header.jpg);
+  background-image: url("background-header.jpg");
   padding: 3%;
   border-radius: 0 0 5px 5px;
+  font-size: 0.8rem;
 }
 
 .scores {
@@ -43,4 +44,14 @@ main {
 
 main p {
   font-family: "Fredoka One", cursive;
+}
+
+@media (min-width: 786px) {
+  header {
+    width: 70%;
+  }
+
+  main {
+    width: 70%;
+  }
 }
